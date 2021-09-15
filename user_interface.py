@@ -120,7 +120,7 @@ def display_payment_value(customer_payment):
     """Displays the value of selected coins as customer is choosing coins to deposit"""
     total_payment_value = 0
     for coin in customer_payment:
-        total_payment_value += 1
+        total_payment_value += coin.value
     total_payment_value = round(total_payment_value, 2)
     print(f'You currently have ${total_payment_value} in hand')
 
@@ -153,8 +153,8 @@ def validate_coin_selection(selection):
     return switcher.get(selection, (False, None))
 
 
-def end_message(soda_name, change_amount):
+def end_message(soda, change_amount):
     """Closing message displaying name of soda purchased and amount of change returned"""
-    print(f'Enjoy your {soda_name}')
-    if change_amount >= 0:
+    print(f'Enjoy your {soda.name}')
+    if change_amount > 0:
         print(f'Dispensing ${change_amount}')
