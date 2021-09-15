@@ -21,5 +21,6 @@ class Simulation:
                 customer.check_backpack()
             elif user_option == 4:
                 user_interface.clear_console()
+                will_proceed = True
             else:
-                will_proceed = False
+                will_proceed == False
